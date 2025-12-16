@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container mx-auto px-8 py-32">
           <div className="max-w-5xl">
             <div className="inline-block bg-terracotta px-6 py-2 text-sm font-black tracking-widest mb-8 uppercase">Premium Bouwservice</div>
-            <h1 className="text-5xl lg:text-9xl font-black mb-8 leading-none">
+            <h1 className="text-4xl md:text-6xl lg:text-9xl font-black mb-8 leading-none">
               BOUW<br/>
               <span className="text-terracotta">MEESTERS</span>
             </h1>
@@ -45,8 +45,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Service 1 */}
-            <Link href="/diensten/complete-renovatie" className="group relative overflow-hidden bg-white border-4 border-navy p-12 hover:bg-navy transition-all duration-300 block cursor-pointer">
-              <div className="absolute top-4 right-4 text-8xl font-black text-warm-grey group-hover:text-navy/20">01</div>
+            <Link href="/diensten/complete-renovatie" className="group relative overflow-hidden bg-white border-4 border-navy p-8 md:p-12 hover:bg-navy transition-all duration-300 block cursor-pointer">
+              <div className="absolute top-2 right-2 md:top-4 md:right-4 text-6xl md:text-8xl font-black text-warm-grey group-hover:text-navy/20">01</div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-terracotta mb-6"></div>
                 <h3 className="text-3xl font-black text-navy group-hover:text-white mb-4 transition-colors uppercase">Complete Renovatie</h3>
@@ -58,8 +58,8 @@ export default function Home() {
             </Link>
 
             {/* Service 2 */}
-            <Link href="/diensten/badkamer-design" className="group relative overflow-hidden bg-terracotta border-4 border-terracotta p-12 block cursor-pointer hover:bg-navy transition-all duration-300">
-              <div className="absolute top-4 right-4 text-8xl font-black text-navy/10 group-hover:text-terracotta/10">02</div>
+            <Link href="/diensten/badkamer-design" className="group relative overflow-hidden bg-terracotta border-4 border-terracotta p-8 md:p-12 block cursor-pointer hover:bg-navy transition-all duration-300">
+              <div className="absolute top-2 right-2 md:top-4 md:right-4 text-6xl md:text-8xl font-black text-navy/10 group-hover:text-terracotta/10">02</div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-white mb-6"></div>
                 <h3 className="text-3xl font-black text-white mb-4 uppercase">Badkamer Design</h3>
@@ -71,8 +71,8 @@ export default function Home() {
             </Link>
 
             {/* Service 3 */}
-            <Link href="/diensten/maatwerk-keukens" className="group relative overflow-hidden bg-gold border-4 border-gold p-12 block cursor-pointer hover:bg-navy hover:border-navy transition-all duration-300">
-              <div className="absolute top-4 right-4 text-8xl font-black text-white/10 group-hover:text-gold/10">03</div>
+            <Link href="/diensten/maatwerk-keukens" className="group relative overflow-hidden bg-gold border-4 border-gold p-8 md:p-12 block cursor-pointer hover:bg-navy hover:border-navy transition-all duration-300">
+              <div className="absolute top-2 right-2 md:top-4 md:right-4 text-6xl md:text-8xl font-black text-white/10 group-hover:text-gold/10">03</div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-navy mb-6"></div>
                 <h3 className="text-3xl font-black text-white mb-4 uppercase">Maatwerk Keukens</h3>
@@ -84,8 +84,8 @@ export default function Home() {
             </Link>
 
             {/* Service 4 */}
-            <Link href="/diensten/uitbouw-projecten" className="group relative overflow-hidden bg-white border-4 border-navy p-12 hover:bg-navy transition-all duration-300 block cursor-pointer">
-              <div className="absolute top-4 right-4 text-8xl font-black text-warm-grey group-hover:text-navy/20">04</div>
+            <Link href="/diensten/uitbouw-projecten" className="group relative overflow-hidden bg-white border-4 border-navy p-8 md:p-12 hover:bg-navy transition-all duration-300 block cursor-pointer">
+              <div className="absolute top-2 right-2 md:top-4 md:right-4 text-6xl md:text-8xl font-black text-warm-grey group-hover:text-navy/20">04</div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-gold mb-6"></div>
                 <h3 className="text-3xl font-black text-navy group-hover:text-white mb-4 transition-colors uppercase">Uitbouw Projecten</h3>
@@ -194,6 +194,42 @@ export default function Home() {
                 <Counter end={5} suffix="★" />
               </div>
               <div className="text-xl font-bold uppercase tracking-wide">Beoordeling</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-32 bg-warm-grey">
+        <div className="container mx-auto px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="inline-block border-4 border-navy px-8 py-3 mb-8">
+                  <span className="text-sm font-black tracking-widest uppercase text-terracotta">Het Team</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-navy mb-8 leading-tight">
+                  EXPERTS IN<br/>
+                  <span className="text-terracotta">VAKMANSCHAP</span>
+                </h2>
+                <p className="text-xl text-text-grey leading-relaxed mb-6">
+                  Met meer dan 25 jaar ervaring in de bouw, combineert ons team traditieel vakmanschap met moderne technieken. Elk project krijgt de persoonlijke aandacht die het verdient.
+                </p>
+                <p className="text-xl text-text-grey leading-relaxed mb-8">
+                  Van de eerste schets tot de laatste penseelstreek – wij staan voor kwaliteit, betrouwbaarheid en perfectie in elk detail.
+                </p>
+                <Link href="/contact" className="inline-block bg-terracotta text-white px-12 py-5 text-lg font-black uppercase hover:bg-navy transition-colors">
+                  Maak Kennis →
+                </Link>
+              </div>
+              <div className="relative h-[500px] lg:h-[700px] overflow-hidden">
+                <Image
+                  src="/images/Het team.jpg"
+                  alt="Het SolisBouw team - experts in verbouwen"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

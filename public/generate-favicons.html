@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <h1>Favicon Generator voor SolisBouw</h1>
+    <p>Klik op de knoppen om de verschillende favicon formaten te downloaden:</p>
+
+    <button onclick="generateFavicon(48, 'favicon-48x48.png')">Download 48x48</button>
+    <button onclick="generateFavicon(192, 'favicon-192x192.png')">Download 192x192</button>
+    <button onclick="generateFavicon(512, 'favicon-512x512.png')">Download 512x512</button>
+    <button onclick="generateFavicon(180, 'apple-touch-icon.png')">Download Apple Touch Icon (180x180)</button>
+
+    <br><br>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        function generateFavicon(size, filename) {
+            const canvas = document.getElementById('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+
+            // Scale factor
+            const scale = size / 48;
+            ctx.scale(scale, scale);
+
+            // Navy background circle
+            ctx.fillStyle = '#1E3A5F';
+            ctx.beginPath();
+            ctx.arc(24, 24, 24, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Terracotta roof
+            ctx.fillStyle = '#D4622F';
+            ctx.beginPath();
+            ctx.moveTo(24, 12);
+            ctx.lineTo(36, 21);
+            ctx.lineTo(36, 22);
+            ctx.lineTo(12, 22);
+            ctx.lineTo(12, 21);
+            ctx.closePath();
+            ctx.fill();
+
+            // House body
+            ctx.fillStyle = '#F8F6F4';
+            ctx.fillRect(14, 21, 20, 15);
+
+            // Door
+            ctx.fillStyle = '#D4622F';
+            ctx.fillRect(20, 27, 8, 9);
+
+            // Left window
+            ctx.fillStyle = '#1E3A5F';
+            ctx.fillRect(16, 23, 5, 5);
+
+            // Right window
+            ctx.fillRect(27, 23, 5, 5);
+
+            // Gold accent on roof peak
+            ctx.fillStyle = '#F5A623';
+            ctx.beginPath();
+            ctx.arc(24, 13, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Reset scale
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+            // Download
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+    </script>
+</body>
+</html>

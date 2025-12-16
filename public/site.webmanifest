@@ -1,0 +1,28 @@
+{
+  "name": "SolisBouw - Specialist in Verbouwingen",
+  "short_name": "SolisBouw",
+  "description": "Transformeer uw woning met 25 jaar expertise. Van concept tot realisatie, wij maken het mogelijk.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E3A5F",
+  "theme_color": "#D4622F",
+  "lang": "nl",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

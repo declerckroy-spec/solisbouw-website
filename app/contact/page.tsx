@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function ContactPage() {
       <section className="min-h-[70vh] flex items-center bg-navy text-white pt-32 pb-24">
         <div className="container mx-auto px-8">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-none">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-8 leading-none">
               LATEN WE<br/>
               <span className="text-terracotta">PRATEN</span>
             </h1>
@@ -192,15 +193,41 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-0">
+      {/* Team Section */}
+      <section className="py-32 bg-navy text-white">
         <div className="container mx-auto px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 h-[500px] flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">📍</div>
-                <p className="text-2xl font-black text-navy uppercase">Kaart Placeholder</p>
-                <p className="text-lg text-text-grey font-bold">Hoofdstraat 123, Amsterdam</p>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative h-[500px] lg:h-[600px] overflow-hidden">
+                <Image
+                  src="/images/Het team.jpg"
+                  alt="Het SolisBouw team"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <div className="inline-block bg-terracotta px-6 py-2 text-sm font-black tracking-widest mb-8 uppercase">Ons Team</div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+                  VAKMANSCHAP<br/>
+                  <span className="text-terracotta">MET PASSIE</span>
+                </h2>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  Achter elk SolisBouw project staat een team van gepassioneerde vakmensen met jarenlange ervaring in de bouw. Van ontwerp tot oplevering werken wij met toewijding aan uw droomproject.
+                </p>
+                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                  Persoonlijke aandacht, vakmanschap en transparante communicatie vormen de basis van onze werkwijze. Uw project is bij ons in de beste handen.
+                </p>
+                <div className="flex gap-8 text-terracotta">
+                  <div>
+                    <div className="text-4xl font-black">25+</div>
+                    <div className="text-sm uppercase tracking-wider text-gray-400 font-bold">Jaar Expertise</div>
+                  </div>
+                  <div>
+                    <div className="text-4xl font-black">500+</div>
+                    <div className="text-sm uppercase tracking-wider text-gray-400 font-bold">Tevreden Klanten</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

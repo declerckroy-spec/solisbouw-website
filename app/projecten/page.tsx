@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function ProjectenPage() {
       <section className="min-h-[60vh] flex items-center bg-navy text-white pt-24 pb-24">
         <div className="container mx-auto px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-none">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-8 leading-none">
               ONS<br/>
               <span className="text-terracotta">PORTFOLIO</span>
             </h1>
@@ -34,7 +35,13 @@ export default function ProjectenPage() {
           <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Project 1 */}
             <Link href="/projecten/amsterdam-noord" className="group">
-              <div className="bg-gradient-to-br from-gray-300 to-gray-400 h-96 mb-6 relative overflow-hidden">
+              <div className="h-96 mb-6 relative overflow-hidden">
+                <Image
+                  src="/images/jared-rice-PibraWHb4h8-unsplash.jpg"
+                  alt="Amsterdam Noord herenhuis renovatie"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/80 transition-all duration-300 flex items-center justify-center">
                   <span className="text-white text-xl font-black opacity-0 group-hover:opacity-100 transition-opacity uppercase">Bekijk Project →</span>
                 </div>
@@ -48,7 +55,13 @@ export default function ProjectenPage() {
 
             {/* Project 2 */}
             <Link href="/projecten/utrecht-centrum" className="group">
-              <div className="bg-gradient-to-br from-gray-300 to-gray-400 h-96 mb-6 relative overflow-hidden">
+              <div className="h-96 mb-6 relative overflow-hidden">
+                <Image
+                  src="/images/lotus-design-n-print-jt2I98bh53A-unsplash.jpg"
+                  alt="Utrecht Centrum penthouse badkamer"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-terracotta/0 group-hover:bg-terracotta/80 transition-all duration-300 flex items-center justify-center">
                   <span className="text-white text-xl font-black opacity-0 group-hover:opacity-100 transition-opacity uppercase">Bekijk Project →</span>
                 </div>
@@ -62,7 +75,13 @@ export default function ProjectenPage() {
 
             {/* Project 3 */}
             <Link href="/projecten/den-haag-villa" className="group">
-              <div className="bg-gradient-to-br from-gray-300 to-gray-400 h-96 mb-6 relative overflow-hidden">
+              <div className="h-96 mb-6 relative overflow-hidden">
+                <Image
+                  src="/images/jean-philippe-delberghe-7l3ruHHQlcI-unsplash.jpg"
+                  alt="Den Haag villa luxe keuken"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/80 transition-all duration-300 flex items-center justify-center">
                   <span className="text-white text-xl font-black opacity-0 group-hover:opacity-100 transition-opacity uppercase">Bekijk Project →</span>
                 </div>
@@ -76,7 +95,13 @@ export default function ProjectenPage() {
 
             {/* Project 4 */}
             <Link href="/projecten/rotterdam-west" className="group">
-              <div className="bg-gradient-to-br from-gray-300 to-gray-400 h-96 mb-6 relative overflow-hidden">
+              <div className="h-96 mb-6 relative overflow-hidden">
+                <Image
+                  src="/images/scott-blake-x-ghf9LjrVg-unsplash.jpg"
+                  alt="Rotterdam West moderne uitbouw"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/80 transition-all duration-300 flex items-center justify-center">
                   <span className="text-white text-xl font-black opacity-0 group-hover:opacity-100 transition-opacity uppercase">Bekijk Project →</span>
                 </div>
@@ -95,7 +120,7 @@ export default function ProjectenPage() {
       <section className="py-32 bg-terracotta text-white">
         <div className="container mx-auto px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl lg:text-7xl font-black mb-8">WIL U OOK ZO'N<br/>RESULTAAT?</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black mb-8">WIL U OOK ZO'N<br/>RESULTAAT?</h2>
             <p className="text-2xl mb-12 leading-relaxed">
               Laat u inspireren en neem contact op. Samen maken we van uw woning een droomhuis.
             </p>

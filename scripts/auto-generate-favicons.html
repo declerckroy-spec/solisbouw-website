@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Favicon Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #1E3A5F; }
+        .status { padding: 10px; margin: 10px 0; background: #f0f0f0; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; }
+        button { background: #D4622F; color: white; border: none; padding: 10px 20px;
+                 font-size: 16px; cursor: pointer; border-radius: 4px; margin: 5px; }
+        button:hover { background: #b54a20; }
+        canvas { border: 1px solid #ddd; margin: 10px 0; }
+        .preview { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
+        .preview-item { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>🏠 SolisBouw Favicon Generator</h1>
+    <p>Dit script genereert automatisch alle benodigde favicon formaten.</p>
+
+    <div id="status"></div>
+
+    <div class="preview" id="preview"></div>
+
+    <div>
+        <button onclick="generateAll()">Genereer Alle Favicons</button>
+        <button onclick="downloadAll()">Download Alles (ZIP zou ideaal zijn)</button>
+    </div>
+
+    <script>
+        const sizes = [
+            { size: 16, name: 'favicon-16x16.png' },
+            { size: 32, name: 'favicon-32x32.png' },
+            { size: 48, name: 'favicon-48x48.png' },
+            { size: 180, name: 'apple-touch-icon.png' },
+            { size: 192, name: 'android-chrome-192x192.png' },
+            { size: 512, name: 'android-chrome-512x512.png' }
+        ];
+
+        const canvases = {};
+
+        function drawFavicon(ctx, size) {
+            const scale = size / 48;
+            ctx.scale(scale, scale);
+
+            // Navy background circle
+            ctx.fillStyle = '#1E3A5F';
+            ctx.beginPath();
+            ctx.arc(24, 24, 24, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Terracotta roof
+            ctx.fillStyle = '#D4622F';
+            ctx.beginPath();
+            ctx.moveTo(24, 12);
+            ctx.lineTo(36, 21);
+            ctx.lineTo(36, 22);
+            ctx.lineTo(12, 22);
+            ctx.lineTo(12, 21);
+            ctx.closePath();
+            ctx.fill();
+
+            // House body (warm grey/white)
+            ctx.fillStyle = '#F8F6F4';
+            ctx.fillRect(14, 21, 20, 15);
+
+            // Door (terracotta)
+            ctx.fillStyle = '#D4622F';
+            ctx.fillRect(20, 27, 8, 9);
+
+            // Windows (navy)
+            ctx.fillStyle = '#1E3A5F';
+            ctx.fillRect(16, 23, 5, 5); // Left window
+            ctx.fillRect(27, 23, 5, 5); // Right window
+
+            // Gold accent on roof peak
+            ctx.fillStyle = '#F5A623';
+            ctx.beginPath();
+            ctx.arc(24, 13, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+        }
+
+        function generateAll() {
+            const preview = document.getElementById('preview');
+            const status = document.getElementById('status');
+            preview.innerHTML = '';
+            status.innerHTML = '<div class="status">Bezig met genereren...</div>';
+
+            sizes.forEach(({ size, name }) => {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+
+                drawFavicon(ctx, size);
+                canvases[name] = canvas;
+
+                // Add to preview
+                const previewItem = document.createElement('div');
+                previewItem.className = 'preview-item';
+                previewItem.innerHTML = `
+                    <div><strong>${size}×${size}</strong></div>
+                    <canvas width="${Math.min(size, 64)}" height="${Math.min(size, 64)}"></canvas>
+                    <div><small>${name}</small></div>
+                    <button onclick="downloadOne('${name}')">Download</button>
+                `;
+
+                const previewCanvas = previewItem.querySelector('canvas');
+                const previewCtx = previewCanvas.getContext('2d');
+                previewCtx.drawImage(canvas, 0, 0, Math.min(size, 64), Math.min(size, 64));
+
+                preview.appendChild(previewItem);
+            });
+
+            status.innerHTML = '<div class="status success">✓ Alle favicons gegenereerd! Klik op de download knoppen hieronder.</div>';
+        }
+
+        function downloadOne(name) {
+            const canvas = canvases[name];
+            if (!canvas) {
+                alert('Genereer eerst de favicons!');
+                return;
+            }
+
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        function downloadAll() {
+            if (Object.keys(canvases).length === 0) {
+                alert('Genereer eerst de favicons!');
+                return;
+            }
+
+            alert('Download elk bestand afzonderlijk en plaats ze in de public/ directory van je project.');
+
+            // Download them one by one with delay
+            let delay = 0;
+            Object.keys(canvases).forEach(name => {
+                setTimeout(() => downloadOne(name), delay);
+                delay += 500;
+            });
+        }
+
+        // Auto-generate on load
+        window.addEventListener('load', () => {
+            setTimeout(generateAll, 500);
+        });
+    </script>
+</body>
+</html>
