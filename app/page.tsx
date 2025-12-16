@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container mx-auto px-8 py-32">
           <div className="max-w-5xl">
             <div className="inline-block bg-terracotta px-6 py-2 text-sm font-black tracking-widest mb-8 uppercase">Premium Bouwservice</div>
-            <h1 className="text-7xl lg:text-9xl font-black mb-8 leading-none">
+            <h1 className="text-5xl lg:text-9xl font-black mb-8 leading-none">
               BOUW<br/>
               <span className="text-terracotta">MEESTERS</span>
             </h1>
@@ -40,7 +40,7 @@ export default function Home() {
             <div className="inline-block border-4 border-navy px-8 py-3 mb-8">
               <span className="text-sm font-black tracking-widest uppercase text-terracotta">Onze Expertise</span>
             </div>
-            <h2 className="text-6xl lg:text-7xl font-black text-navy">VAKMANSCHAP</h2>
+            <h2 className="text-4xl lg:text-7xl font-black text-navy">VAKMANSCHAP</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
@@ -103,7 +103,7 @@ export default function Home() {
       <section id="projecten" className="py-32 bg-warm-grey">
         <div className="container mx-auto px-8">
           <div className="mb-24">
-            <h2 className="text-6xl lg:text-8xl font-black text-navy mb-4">PORTFOLIO</h2>
+            <h2 className="text-4xl lg:text-8xl font-black text-navy mb-4">PORTFOLIO</h2>
             <p className="text-2xl text-text-grey font-bold">Recente transformaties</p>
           </div>
 
@@ -202,7 +202,7 @@ export default function Home() {
       {/* Testimonials */}
       <section id="reviews" className="py-32 bg-navy text-white">
         <div className="container mx-auto px-8">
-          <h2 className="text-6xl lg:text-7xl font-black mb-24 text-center">WAT KLANTEN<br/><span className="text-terracotta">ZEGGEN</span></h2>
+          <h2 className="text-4xl lg:text-7xl font-black mb-24 text-center">WAT KLANTEN<br/><span className="text-terracotta">ZEGGEN</span></h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <div className="bg-white text-navy p-10 border-t-8 border-terracotta">
@@ -232,7 +232,7 @@ export default function Home() {
       {/* CTA */}
       <section id="contact" className="py-40 bg-gold text-navy">
         <div className="container mx-auto px-8 text-center">
-          <h2 className="text-6xl lg:text-8xl font-black mb-8 leading-tight">KLAAR VOOR<br/>UW PROJECT?</h2>
+          <h2 className="text-4xl lg:text-8xl font-black mb-8 leading-tight">KLAAR VOOR<br/>UW PROJECT?</h2>
           <p className="text-2xl mb-16 max-w-3xl mx-auto font-bold">Neem vandaag nog contact op en ontdek wat we voor u kunnen realiseren.</p>
           <a href="#" className="inline-block bg-navy text-white px-16 py-6 text-xl font-black uppercase hover:bg-terracotta transition-colors">
             Gratis Offerte →
