@@ -30,7 +30,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
             </>
           ) : (
             <>
-              <Link href="/" className={`font-black text-lg hover:text-terracotta transition-colors ${currentPage === 'home' ? 'text-terracotta' : 'text-navy'}`}>HOME</Link>
+              <Link href="/" className="font-black text-lg hover:text-terracotta transition-colors text-navy">HOME</Link>
               <Link href="/diensten" className={`font-black text-lg hover:text-terracotta transition-colors ${currentPage === 'diensten' ? 'text-terracotta' : 'text-navy'}`}>DIENSTEN</Link>
               <Link href="/projecten" className={`font-black text-lg hover:text-terracotta transition-colors ${currentPage === 'projecten' ? 'text-terracotta' : 'text-navy'}`}>PROJECTEN</Link>
             </>
